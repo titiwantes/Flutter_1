@@ -7,9 +7,9 @@ import 'package:app/config/MainBehavior.dart';
 import 'package:app/config/routes.dart';
 import 'package:app/shared/CustomAppBar.dart';
 import 'package:app/shared/NavMenu.dart';
+import 'music_player.dart';
 
 void main() {
-
   runApp(Main());
 }
 

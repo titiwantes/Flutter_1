@@ -1,35 +1,125 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
+import 'package:app/config/MainBehavior.dart';
+import 'package:app/config/routes.dart';
+import 'package:app/shared/CustomAppBar.dart';
+import 'package:app/shared/NavMenu.dart';
 import 'music_player.dart';
 
 void main() {
-  runApp(const MyApp());
-} // Main call function
+  runApp(Main());
+}
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
+class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        backgroundColor: Colors.white,
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+        hoverColor: Colors.transparent,
         // Define the default brightness and colors.
-        brightness: Brightness.dark,
-        primaryColor: Colors.black,
+        // primaryColor: Colors.white,
+        // accentColor: Colors.cyan[600],
 
         // Define the default font family.
-        fontFamily: 'Georgia',
+        fontFamily: 'Quicksand',
 
-        // Define the default `TextTheme`. Use this to specify the default
+        // Define the default TextTheme. Use this to specify the default
         // text styling for headlines, titles, bodies of text, and more.
-        textTheme: const TextTheme(
-          headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-          // headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
+        textTheme: TextTheme(
+          headline1: GoogleFonts.baloo(
+              fontSize: 28,
+              color: Colors.black
+          ),
+          headline6:  GoogleFonts.quicksand(
+              fontSize: 20,
+              color: Color.fromARGB(255, 53, 28, 117),
+              fontWeight: FontWeight.bold
+          ),
+          bodyText1: GoogleFonts.quicksand(
+              fontSize: 17,
+              color: Colors.black,
+              fontWeight: FontWeight.normal
+          ),
           bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
         ),
       ),
-      home: MusicPlayer(),
+      home: App(),
+      builder: (context, child) {
+        return ScrollConfiguration(
+          behavior: MainBehavior(),
+          child: child!,
+        );
+      },
+    );
+  }
+}
+
+class App extends StatefulWidget {
+  const App({Key? key}) : super(key: key);
+
+  @override
+  _AppState createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  final _navigatorKey = GlobalKey<NavigatorState>();
+
+  Future<bool> _willPopCallback() async {
+    if (_navigatorKey.currentState!.canPop()) {
+      _navigatorKey.currentState?.pop();
+      return false;
+    }
+
+    // Navigator.of(context).pop(slideLeftRoute(generalSettingsRoute));
+    // await showDialog or Show add banners or whatever
+    // then
+    return true; // return true if the route to be popped
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return WillPopScope(
+        child: GestureDetector(
+          onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+          child: Scaffold(
+              resizeToAvoidBottomInset: false,
+              drawerEnableOpenDragGesture: false,
+              drawer: NavMenu(navigatorKey: _navigatorKey),
+              appBar: PreferredSize(
+                preferredSize: Size.fromHeight(60.0),
+                child: CustomAppBar(),
+              ),
+              backgroundColor: Colors.white,
+              body: Navigator(
+                key: _navigatorKey,
+                initialRoute: HomeRoute,
+                onPopPage: (route, result) {
+                  // if (!route.didPop(result)) {
+                  //   return false;
+                  // }
+                  // _navigatorKey.currentState?.pop(result);
+                  return true;
+                },
+                onGenerateRoute: (RouteSettings settings) {
+                  WidgetBuilder builder;
+                  builder = (BuildContext context) => getRoute(settings.name);
+
+                  return MaterialPageRoute(
+                    builder: builder,
+                    settings: settings,
+                  );
+                },
+              )
+          ),
+        ),
+        onWillPop: _willPopCallback
     );
   }
 }

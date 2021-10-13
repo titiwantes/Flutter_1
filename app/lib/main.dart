@@ -7,7 +7,7 @@ import 'package:app/config/MainBehavior.dart';
 import 'package:app/config/routes.dart';
 import 'package:app/shared/CustomAppBar.dart';
 import 'package:app/shared/NavMenu.dart';
-import 'music_player.dart';
+import 'modules/musicPlayer/music_player.dart';
 
 void main() {
   runApp(Main());
@@ -99,7 +99,7 @@ class _AppState extends State<App> {
               backgroundColor: Colors.white,
               body: Navigator(
                 key: _navigatorKey,
-                initialRoute: HomeRoute,
+                initialRoute: musicPlayerRoute,
                 onPopPage: (route, result) {
                   // if (!route.didPop(result)) {
                   //   return false;

@@ -8,6 +8,7 @@ import 'package:app/config/routes.dart';
 import 'package:app/shared/CustomAppBar.dart';
 import 'package:app/shared/NavMenu.dart';
 import 'modules/musicPlayer/music_player.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(Main());

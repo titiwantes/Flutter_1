@@ -23,20 +23,20 @@ class _SeparatorState extends State<Separator> {
           Expanded(
             child: Container(
               height: 1,
-              color: PColors.transparentGrey,
+              color: Pcolors.transparentGrey,
             ),
           ),
           Container(
             padding: EdgeInsets.only(left: 10, right: 10),
             child: Text(
               "OU",
-              style: CustomTextStyle.quicksandRegular(context, PColors.transparentGrey, 13),
+              style: CustomTextStyle.quicksandRegular(context, Pcolors.transparentGrey, 13),
             ),
           ),
           Expanded(
             child: Container(
               height: 1,
-              color: PColors.transparentGrey,
+              color: Pcolors.transparentGrey,
             ),
           )
         ],

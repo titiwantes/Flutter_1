@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:app/config/Colors.dart';
 
 class CustomAppBar extends StatelessWidget {
 
@@ -8,7 +9,7 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Pcolors.white,
       resizeToAvoidBottomInset: false,
       key: _scaffoldKey,
       body: Container(
@@ -23,7 +24,7 @@ class CustomAppBar extends StatelessWidget {
                 iconSize: 35,
                 icon: Icon(
                   Icons.menu,
-                  color: Colors.black,
+                  color: Pcolors.black,
                 ),
                 onPressed: () {
                   Scaffold.of(context).openDrawer();

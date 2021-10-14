@@ -11,6 +11,7 @@ import 'package:app/modules/Logout/Logout.dart';
 import 'package:app/modules/Profile/Profile.dart';
 import 'package:app/modules/Settings/Settings.dart';
 import 'package:app/modules/musicPlayer/music_player.dart';
+import 'package:app/modules/Settings/appearance/AppearanceSettingsPage.dart';
 
 
 class RouteModel {
@@ -32,6 +33,7 @@ const String SettingsRoute = '/Settings';
 const String testPage1 = '/testPage1';
 const String testPage2 = '/testPage2';
 const String musicPlayerRoute = '/musicPlayerPage';
+const String appearanceSettingsRoute = '/settings/appearance';
 
 var routes = [
   //RouteModel(path: homeRoute, buildRoute: ([Arguments? args]) => HomePage()),
@@ -44,6 +46,7 @@ var routes = [
   RouteModel(path: HelpRoute, buildRoute: ([Arguments? args]) => Help()),
   RouteModel(path: HomeRoute, buildRoute: ([Arguments? args]) => Home()),
   RouteModel(path: musicPlayerRoute, buildRoute: ([Arguments? args]) => MusicPlayer()),
+  RouteModel(path: appearanceSettingsRoute, buildRoute: ([Arguments? args]) => AppearanceSettingsPage())
 
 ];
 

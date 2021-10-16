@@ -9,6 +9,7 @@ import 'package:app/shared/CustomAppBar.dart';
 import 'package:app/shared/NavMenu.dart';
 import 'modules/musicPlayer/music_player.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:app/config/Colors.dart';
 
 void main() {
   runApp(Main());
@@ -20,7 +21,7 @@ class Main extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        backgroundColor: Colors.white,
+        backgroundColor: Pcolors.white,
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
         hoverColor: Colors.transparent,

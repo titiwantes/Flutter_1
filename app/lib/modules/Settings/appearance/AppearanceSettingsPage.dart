@@ -48,7 +48,7 @@ class _AppearanceSettingsPage extends State<AppearanceSettingsPage> {
             SizedBox(height: 30),
             SettingsSwitchButton(
               keyChild: Key('Dark mode settings'),
-              text: "Dark mode",
+              text: "Light mode",
               value: _darkMode,
               onChanged: (bool val) async {
                 await SharedPreferencesService.setThemeParameters(val == true ? 'dark' : 'light');
@@ -64,7 +64,7 @@ class _AppearanceSettingsPage extends State<AppearanceSettingsPage> {
                     Pcolors.purple = Color.fromARGB(255, 180, 167, 214);
                     Pcolors.black = Color.fromARGB(255, 3, 3, 3);
                     Pcolors.orange = Color.fromARGB(255, 255, 174, 92);
-                    Pcolors.whiteButton = Color.fromARGB(255, 54,57,62);
+                    Pcolors.whiteButton = Color.fromARGB(255, 255, 255, 255);
                   } else {
                     Pcolors.white = PcolorsBackUp.white;
                     Pcolors.greyMessage = PcolorsBackUp.greyMessage;

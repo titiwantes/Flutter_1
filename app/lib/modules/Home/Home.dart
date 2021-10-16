@@ -8,7 +8,7 @@ class Home extends StatelessWidget {
     return Center(
       child: ElevatedButton(
         onPressed: () {
-          Navigator.pushNamed(context, '/');
+          Navigator.pushNamed(context, '/musicPlayerPage');
         },
         child: const Text('Home screen'),
       ),

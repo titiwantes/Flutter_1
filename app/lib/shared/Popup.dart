@@ -31,7 +31,7 @@ class _PopupArrive extends State<PopupArrive> {
           alignment : Alignment.center,
           child: Text(
             'Vous êtes arrivé à destination !',
-            style: CustomTextStyle.quicksandBold(context, PColors.black, 19),
+            style: CustomTextStyle.quicksandBold(context, Pcolors.black, 19),
           )
         );
 
@@ -40,7 +40,7 @@ class _PopupArrive extends State<PopupArrive> {
           alignment : Alignment.center,
           child: Text(
             'Ce trajet vous a-t-il convenu ?',
-            style: CustomTextStyle.quicksandRegular(context, PColors.black, 19),
+            style: CustomTextStyle.quicksandRegular(context, Pcolors.black, 19),
             )
         );
 
@@ -50,7 +50,7 @@ class _PopupArrive extends State<PopupArrive> {
         margin: EdgeInsets.only(top:20, bottom: 25),
         alignment : Alignment.center,
         decoration: BoxDecoration(
-          color: PColors.red,
+          color: Pcolors.red,
           borderRadius: BorderRadius.circular(16.0),
         ),
           child: Text(
@@ -66,7 +66,7 @@ class _PopupArrive extends State<PopupArrive> {
         margin: EdgeInsets.only(top:20, left:20, bottom: 25), //mettre un pourcentage à la place de left
         alignment : Alignment.center,
         decoration: BoxDecoration(
-          color: PColors.green,
+          color: Pcolors.green,
           borderRadius: BorderRadius.circular(16.0),
         ),
         child: Text(

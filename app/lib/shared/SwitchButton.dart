@@ -53,8 +53,8 @@ class _SwitchButton extends State<SwitchButton> with SingleTickerProviderStateMi
               borderRadius: BorderRadius.circular(24.0),
               color: _circleAnimation.value ==
                   Alignment.centerLeft
-                  ? PColors.green
-                  : PColors.red,),
+                  ? Pcolors.green
+                  : Pcolors.red,),
             child: Padding(
               padding: const EdgeInsets.only(
                   top: 0, bottom: 0, right: 0, left: 0),
@@ -68,7 +68,7 @@ class _SwitchButton extends State<SwitchButton> with SingleTickerProviderStateMi
                   decoration: BoxDecoration(
                     border: Border.all(color: Color.fromARGB(200, 221, 221, 221)),
                     shape: BoxShape.circle,
-                    color: PColors.white,
+                    color: Pcolors.white,
                     boxShadow: [
                       BoxShadow(
                         color: Color.fromARGB(100, 0, 0, 0),

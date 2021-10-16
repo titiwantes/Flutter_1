@@ -7,7 +7,7 @@ class RoutesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: PColors.white,
+      backgroundColor: Pcolors.white,
       body: Center(
         child: ElevatedButton(
           onPressed: () {

@@ -24,7 +24,7 @@ class _ButtonStyle1State extends State<ButtonStyle1> {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(15.0),
-        border: Border.all(color: PColors.transparentGrey)
+        border: Border.all(color: Pcolors.transparentGrey)
       ),
       child: Row(
         children: <Widget>[

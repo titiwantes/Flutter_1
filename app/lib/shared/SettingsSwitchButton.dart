@@ -7,6 +7,7 @@ class SettingsSwitchButton extends StatefulWidget {
 
   SettingsSwitchButton({
     Key? key,
+    this.keyChild,
     required this.text,
     required this.value,
     required this.onChanged
@@ -15,6 +16,8 @@ class SettingsSwitchButton extends StatefulWidget {
   final String text;
   final bool value;
   final ValueChanged<bool> onChanged;
+  final Key? keyChild;
+
 
   @override
   _SettingsSwitchButton createState() => _SettingsSwitchButton();
@@ -31,7 +34,7 @@ class _SettingsSwitchButton extends State<SettingsSwitchButton> {
         padding: EdgeInsets.only(top: 10, bottom: 10, left: 15, right: 15),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
-          color: PColors.white,
+          color: Pcolors.whiteButton,
           boxShadow: [
             BoxShadow(
               color: Color.fromARGB(100, 0, 0, 0),
@@ -46,7 +49,7 @@ class _SettingsSwitchButton extends State<SettingsSwitchButton> {
           children: <Widget>[
             Text(
               widget.text,
-              style: CustomTextStyle.quicksandMedium(context, Color.fromARGB(150, 0, 0, 0), 15),
+              style: CustomTextStyle.quicksandMedium(context, Pcolors.black, 15),
             ),
             SwitchButton(
               value: widget.value,

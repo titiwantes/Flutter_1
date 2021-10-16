@@ -66,7 +66,7 @@ class _HeaderStyle1State extends State<HeaderStyle1> {
                         alignment: Alignment.centerLeft,
                         child: Text(
                           widget.text3,
-                          style: CustomTextStyle.quicksandRegular(context, PColors.orange, 15),
+                          style: CustomTextStyle.quicksandRegular(context, Pcolors.orange, 15),
                           textAlign: TextAlign.left,
                         ),
                       ),

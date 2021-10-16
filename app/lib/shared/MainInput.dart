@@ -84,7 +84,7 @@ class _MainInput extends State<MainInput> {
           decoration: BoxDecoration(
           ),
           child: TextField(
-            cursorColor: PColors.orange,
+            cursorColor: Pcolors.orange,
             decoration: InputDecoration(
               border: InputBorder.none,
               focusedBorder: InputBorder.none,
@@ -143,7 +143,7 @@ class _MainInput extends State<MainInput> {
                     width: 50,
                     child: AvatarGlow(
                       animate: _isListening,
-                      glowColor: _isListening ? PColors.purple : Colors.white,
+                      glowColor: _isListening ? Pcolors.purple : Colors.white,
                       endRadius: 50.0,
                       duration: const Duration(milliseconds: 2000),
                       repeatPauseDuration: const Duration(milliseconds: 100),

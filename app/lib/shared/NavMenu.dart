@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:app/config/routes.dart';
 import 'package:app/utils/routes-animation/slideLeftRoute.dart';
+import 'package:app/config/Colors.dart';
 
 class NavMenu extends StatefulWidget {
   NavMenu({
@@ -25,7 +26,7 @@ class _NavMenu extends State<NavMenu> {
     maxWidth: 40
   );
   final divider = Divider(
-    color: Colors.black,
+    color: Pcolors.white,
     height: 1,
     thickness: 1,
     indent: 20,
@@ -35,13 +36,14 @@ class _NavMenu extends State<NavMenu> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Pcolors.whiteButton,
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
           DrawerHeader(
             padding: EdgeInsets.all(0.0),
             child: Container(
-              color: Color.fromARGB(255, 180, 167, 214),
+              color: Pcolors.white,
               child: Row(
                 children: <Widget>[
                   Container(
@@ -49,13 +51,13 @@ class _NavMenu extends State<NavMenu> {
                     padding: const EdgeInsets.all(30),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Colors.black,
+                      color: Pcolors.whiteButton,
                     ),
                   ),
                   Text(
                     "Jules",
                     style: Theme.of(context).textTheme.headline1?.copyWith(
-                      color: Colors.white,
+                      color: Pcolors.black,
                       fontSize: 38
                     ),
                   )
@@ -68,7 +70,7 @@ class _NavMenu extends State<NavMenu> {
               constraints: constraintsIcons,
               //child: Image.asset(''),
             ),
-            title: Text('Profile'),
+            title: Text('Profile', style: TextStyle(color: Pcolors.black)),
             onTap: () {
               Navigator.of(context).pop();
               widget.navigatorKey.currentState?.push(slideLeftRoute(ProfileRoute));
@@ -80,7 +82,7 @@ class _NavMenu extends State<NavMenu> {
               constraints: constraintsIcons,
               //child: Image.asset(''),
             ),
-            title: Text('Settings'),
+            title: Text('Settings', style: TextStyle(color: Pcolors.black)),
             onTap: () {
               Navigator.of(context).pop();
               widget.navigatorKey.currentState?.push(slideLeftRoute(SettingsRoute));
@@ -92,7 +94,7 @@ class _NavMenu extends State<NavMenu> {
               constraints: constraintsIcons,
               //child: Image.asset(''),
             ),
-            title: Text('Favoris'),
+            title: Text('Favoris', style: TextStyle(color: Pcolors.black)),
             onTap: () {
               Navigator.of(context).pop();
               widget.navigatorKey.currentState?.push(slideLeftRoute(FavorisRoute));
@@ -104,7 +106,7 @@ class _NavMenu extends State<NavMenu> {
               constraints: constraintsIcons,
               //child: Image.asset(''),
             ),
-            title: Text('Home'),
+            title: Text('Home', style: TextStyle(color: Pcolors.black)),
             onTap: () {
               Navigator.of(context).pop();
               widget.navigatorKey.currentState?.push(slideLeftRoute(HomeRoute));
@@ -116,7 +118,7 @@ class _NavMenu extends State<NavMenu> {
               constraints: constraintsIcons,
               //child: Image.asset(''),
             ),
-            title: Text('Help'),
+            title: Text('Help', style: TextStyle(color: Pcolors.black)),
             onTap: () {
               Navigator.of(context).pop();
               widget.navigatorKey.currentState?.push(slideLeftRoute(HelpRoute));
@@ -128,7 +130,7 @@ class _NavMenu extends State<NavMenu> {
               constraints: constraintsIcons,
               //child: Image.asset(''),
             ),
-            title: Text('Déconnexion'),
+            title: Text('Déconnexion', style: TextStyle(color: Pcolors.black)),
             onTap: () {
               Navigator.of(context).pop();
               widget.navigatorKey.currentState?.push(slideLeftRoute(LogoutRoute));

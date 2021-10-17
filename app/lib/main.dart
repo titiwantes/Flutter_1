@@ -17,21 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        backgroundColor: Colors.black,
-        splashColor: Colors.transparent,
-        highlightColor: Colors.transparent,
-        hoverColor: Colors.transparent,
-        // Define the default brightness and colors.
-        // primaryColor: Colors.white,
-        // accentColor: Colors.cyan[600],
-
-        // Define the default font family.
-        fontFamily: 'Quicksand',
-
-        // Define the default TextTheme. Use this to specify the default
-        // text styling for headlines, titles, bodies of text, and more.
-      ),
+      theme: ThemeData.dark(),
       title: 'Flutter Demo',
       home: ProfilInfo(),
     );

@@ -27,11 +27,18 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  flutter:
-    sdk: flutter
+  theme_provider: 
+  
   line_awesome_flutter: ^1.0.1
   flutter_screenutil: ^1.0.2
-  animated_theme_switcher: ^1.0.5
+  animated_theme_switcher: ^2.0.1-nullsafety.0
+  shared_preferences: ^2.0.8
+  image_picker: ^0.7.4
+  path_provider: ^2.0.1
+  
+
+  flutter:
+    sdk: flutter
 
 
 

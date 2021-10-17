@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:app/config/MainBehavior.dart';
@@ -14,10 +15,29 @@ void main() {
 }
 
 class Main extends StatelessWidget {
+=======
+import './profil.dart';
+import './edit.dart';
+import 'package:animated_theme_switcher/animated_theme_switcher.dart';
+import 'package:flutter/painting.dart';
+import './user.dart';
+
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Userpref.init();
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+>>>>>>> 05bc74b5148997df77e91d0002f58401ced11efe
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark(),
       title: 'Flutter Demo',
+<<<<<<< HEAD
       theme: ThemeData(
         backgroundColor: Colors.white,
         splashColor: Colors.transparent,
@@ -57,10 +77,14 @@ class Main extends StatelessWidget {
           child: child!,
         );
       },
+=======
+      home: ProfilInfo(),
+>>>>>>> 05bc74b5148997df77e91d0002f58401ced11efe
     );
   }
 }
 
+<<<<<<< HEAD
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
 
@@ -122,4 +146,15 @@ class _AppState extends State<App> {
         onWillPop: _willPopCallback
     );
   }
+=======
+class MyThemes {
+  static final primaryColor = Colors.green;
+
+  static final darkTheme = ThemeData(
+    primaryColorDark: primaryColor,
+    dividerColor: Colors.white,
+  );
+  static final lightTheme =
+      ThemeData(primaryColor: primaryColor, dividerColor: Colors.black);
+>>>>>>> 05bc74b5148997df77e91d0002f58401ced11efe
 }

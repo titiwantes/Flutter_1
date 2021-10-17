@@ -18,8 +18,7 @@ class _EditPageState extends State<EditPage> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-      appBar: myAppBar(context),
-      body: ListView(
+          body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 32),
         physics: BouncingScrollPhysics(),
         children: [
@@ -28,7 +27,7 @@ class _EditPageState extends State<EditPage> {
               onClicked: () async {
                 print('image');
                 final image =
-                    await ImagePicker().getImage(source: ImageSource.gallery);
+                    await ImagePicker().getImage(source: ImageSource.camera);
                 if (image == null) return;
 
                 final dir = await getApplicationDocumentsDirectory();
@@ -68,6 +67,7 @@ class ButtonWidgetSave extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ElevatedButton(
         style: ElevatedButton.styleFrom(
+          primary: Colors.black,
           onPrimary: Colors.white,
           shape: StadiumBorder(),
         ),
@@ -130,7 +130,7 @@ class ProfileEditWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = Theme.of(context).colorScheme.primary;
+    final color = Colors.black;
 
     return Center(
         child: Center(

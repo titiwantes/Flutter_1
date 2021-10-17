@@ -30,38 +30,37 @@ class ProfilInfoState extends State<ProfilInfo> {
   User user = Userpref.getUser();
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: myAppBar(context),
         body: ListView(
-          physics: BouncingScrollPhysics(),
-          children: [
-            ProfileWidget(image: user.image, onClicked: () async {}),
-            const SizedBox(height: 30),
-            DataWidget(user),
-            const SizedBox(height: 10),
-            Center(
-                child: ButtonWidget(
-              text: 'EDIT PROFIL',
-              onClicked: () async {
-                await Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => EditPage()));
-                setState(() {
-                  user = user;
-                });
-              },
-            )),
-            const SizedBox(height: 20),
-            NumberWidget(),
-            const SizedBox(height: 40),
-            MusicWidget(context, 'God Plan', 'Song Drake',
-                'https://images.unsplash.com/photo-1623969451926-10c5e52b707a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80'),
-            const SizedBox(height: 5),
-            MusicWidget(context, 'God Plan', 'Song Drake',
-                'https://images.unsplash.com/photo-1562403681-c1e256fdc27b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1606&q=80'),
-            const SizedBox(height: 5),
-            MusicWidget(context, 'God Plan', 'Song Drake',
-                'https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80')
-          ],
-        ));
+      physics: BouncingScrollPhysics(),
+      children: [
+        ProfileWidget(image: user.image, onClicked: () async {}),
+        const SizedBox(height: 30),
+        DataWidget(user),
+        const SizedBox(height: 10),
+        Center(
+            child: ButtonWidget(
+          text: 'EDIT PROFIL',
+          onClicked: () async {
+            await Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => EditPage()));
+            setState(() {
+              user = user;
+            });
+          },
+        )),
+        const SizedBox(height: 20),
+        NumberWidget(),
+        const SizedBox(height: 40),
+        MusicWidget(context, 'God Plan', 'Song Drake',
+            'https://images.unsplash.com/photo-1623969451926-10c5e52b707a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80'),
+        const SizedBox(height: 5),
+        MusicWidget(context, 'God Plan', 'Song Drake',
+            'https://images.unsplash.com/photo-1562403681-c1e256fdc27b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1606&q=80'),
+        const SizedBox(height: 5),
+        MusicWidget(context, 'God Plan', 'Song Drake',
+            'https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80')
+      ],
+    ));
   }
 }
 
@@ -152,6 +151,7 @@ class ButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ElevatedButton(
         style: ElevatedButton.styleFrom(
+            primary: Colors.black,
             onPrimary: Colors.white,
             shape: StadiumBorder(),
             padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10)),
@@ -261,7 +261,7 @@ class Userpref {
   static late SharedPreferences _preferences;
   static const _keyUser = 'user';
   static const myUser = User(
-      name: 'Jean Dupont',
+      name: 'Drake',
       mail: 'test@gmail.com',
       image:
           'https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1630&q=80',

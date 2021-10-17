@@ -71,10 +71,17 @@ class MusicPlayer extends StatelessWidget {
             SizedBox(
               height: 16.0,
             ),
-            SongWidget('Animals', 'Martin Garrix', 'assets/images/animals.jpg',"assets/musics/animals.mp3"),
-            SongWidget('Often', 'The Weeknd', 'assets/images/often.jpg', "assets/musics/Often.mp3"),
-            SongWidget('Smooth Criminal', 'Mickael Jackson', 'assets/images/mickael_jackson.jpg',"assets/musics/Smooth_criminal.mp3"),
-            SongWidget('Squid Game', 'Samuel Kim Music', 'assets/images/squid_game.jpg',"assets/musics/Squid_game.mp3"),
+            SongWidget('Animals', 'Martin Garrix', 'assets/images/animals.jpg',
+                "assets/musics/animals.mp3"),
+            SongWidget('Often', 'The Weeknd', 'assets/images/often.jpg',
+                "assets/musics/Often.mp3"),
+            SongWidget(
+                'Smooth Criminal',
+                'Mickael Jackson',
+                'assets/images/mickael_jackson.jpg',
+                "assets/musics/Smooth_criminal.mp3"),
+            SongWidget('Squid Game', 'Samuel Kim Music',
+                'assets/images/squid_game.jpg', "assets/musics/Squid_game.mp3"),
           ],
         ),
       ),
@@ -124,7 +131,7 @@ class _SongWidgetState extends State<SongWidget> {
                 child: ClipRRect(
                   //Round the edges of a rectangle
                   borderRadius: BorderRadius.circular(8.0),
-                  child: Image.network(
+                  child: Image.asset(
                     widget.image,
                     fit: BoxFit.cover,
                   ),
@@ -166,7 +173,7 @@ class _SongWidgetState extends State<SongWidget> {
               Text(
                 widget.title,
                 style: TextStyle(
-                    color:Pcolors.black,
+                    color: Pcolors.black,
                     fontWeight: FontWeight.bold,
                     fontSize: 24.0),
               ),

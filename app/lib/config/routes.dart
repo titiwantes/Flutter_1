@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:app/utils/Arguments.dart';
 import 'package:app/modules/testPage/testPage1.dart';
@@ -12,13 +10,10 @@ import 'package:app/modules/Profile/Profile.dart';
 import 'package:app/modules/Settings/Settings.dart';
 import 'package:app/modules/musicPlayer/music_player.dart';
 import 'package:app/modules/Settings/appearance/AppearanceSettingsPage.dart';
-
+import 'package:app/modules/libprofil/profil.dart';
 
 class RouteModel {
-  RouteModel({
-    required this.path,
-    required this.buildRoute
-  });
+  RouteModel({required this.path, required this.buildRoute});
 
   String path;
   Function([Arguments?]) buildRoute;
@@ -41,15 +36,21 @@ var routes = [
   RouteModel(path: testPage2, buildRoute: ([Arguments? args]) => TestPage2()),
   RouteModel(path: FavorisRoute, buildRoute: ([Arguments? args]) => Favoris()),
   RouteModel(path: LogoutRoute, buildRoute: ([Arguments? args]) => Logout()),
-  RouteModel(path: ProfileRoute, buildRoute: ([Arguments? args]) => Profile()),
-  RouteModel(path: SettingsRoute, buildRoute: ([Arguments? args]) => Settings()),
+  RouteModel(
+      path: ProfileRoute, buildRoute: ([Arguments? args]) => ProfilInfo()),
+  RouteModel(
+      path: SettingsRoute, buildRoute: ([Arguments? args]) => Settings()),
   RouteModel(path: HelpRoute, buildRoute: ([Arguments? args]) => Help()),
   RouteModel(path: HomeRoute, buildRoute: ([Arguments? args]) => Home()),
-  RouteModel(path: musicPlayerRoute, buildRoute: ([Arguments? args]) => MusicPlayer()),
-  RouteModel(path: appearanceSettingsRoute, buildRoute: ([Arguments? args]) => AppearanceSettingsPage())
-
+  RouteModel(
+      path: musicPlayerRoute, buildRoute: ([Arguments? args]) => MusicPlayer()),
+  RouteModel(
+      path: appearanceSettingsRoute,
+      buildRoute: ([Arguments? args]) => AppearanceSettingsPage())
 ];
 
 getRoute(String? routeName, [Arguments? args]) {
-  return routes.firstWhere((element) => element.path == routeName).buildRoute(args);
+  return routes
+      .firstWhere((element) => element.path == routeName)
+      .buildRoute(args);
 }

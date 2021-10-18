@@ -114,11 +114,11 @@ class _RegisterPageState extends State<RegisterPage> {
   /// Called when user click on register button.
   ///
   void _onClickRegister() {
-    resetErrors();
+    /*resetErrors();
 
     if (haveErrors()) {
       return;
-    }
+    }*/
 
     Navigator.pushNamed(context, '/');
   }
@@ -132,9 +132,9 @@ class _RegisterPageState extends State<RegisterPage> {
         child: Column(
           children: <Widget>[
             HeaderStyle1(
-              text1: "Inscrivez-vous !",
-              text2: "Déjà inscrit ? ",
-              text3: "Cliquez ici",
+              text1: "Sign-up !",
+              text2: "Already register ? ",
+              text3: "Click there",
               routeRedirect: LoginRoute,
 
             ),
@@ -145,7 +145,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   textPlaceholder: "marc_durand",
                   showIcon: false,
                   fontSizeInput: 15,
-                  label: "Nom d'utilisateur*",
+                  label: "Username*",
                   inputBorder: Border.all(color: Pcolors.transparentGrey),
                   onValidate: (String text) {
                   },
@@ -160,7 +160,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 textPlaceholder: "Marc",
                 showIcon: false,
                 fontSizeInput: 15,
-                label: "Prénom",
+                label: "First name",
                 inputBorder: Border.all(color: Pcolors.transparentGrey),
                 onValidate: (String text) {
                 },
@@ -175,7 +175,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 textPlaceholder: "Durand",
                 showIcon: false,
                 fontSizeInput: 15,
-                label: "Nom",
+                label: "Last name",
                 inputBorder: Border.all(color: Pcolors.transparentGrey),
                 onValidate: (String text) {
                 },
@@ -205,7 +205,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 textPlaceholder: "********",
                 showIcon: false,
                 fontSizeInput: 15,
-                label: "Mot de passe*",
+                label: "Password*",
                 inputBorder: Border.all(color: Pcolors.transparentGrey),
                 onValidate: (String text) {
                 },
@@ -220,7 +220,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 textPlaceholder: "********",
                 showIcon: false,
                 fontSizeInput: 15,
-                label: "Confirmation de mot de passe*",
+                label: "Confirm password*",
                 inputBorder: Border.all(color: Pcolors.transparentGrey),
                 onValidate: (String text) {
                 },
@@ -232,7 +232,7 @@ class _RegisterPageState extends State<RegisterPage> {
               margin: EdgeInsets.only(top: 30),
               child: MainButton(
                 key: Key("Button register"),
-                text: "S'INSCRIRE",
+                text: "REGISTER",
                 color: Pcolors.orange,
                 onTap: _onClickRegister,
               ),

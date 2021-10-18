@@ -51,6 +51,7 @@ class _EditPageState extends State<EditPage> {
               print('save');
               Userpref.setUser(user);
               Navigator.of(context).pop();
+
             },
           )
         ],

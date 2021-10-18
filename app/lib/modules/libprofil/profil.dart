@@ -73,8 +73,10 @@ Widget MusicWidget(
         child: Row(
           children: <Widget>[
             Container(
+              height: 70.0,
+              width: 70.0,
               child: Row(children: <Widget>[
-                Image.network(img, cacheHeight: 70, cacheWidth: 70),
+                Image.network(img, height: 70.0, width: 70.0,),
               ]),
             ),
             SizedBox(width: 10, height: 70),

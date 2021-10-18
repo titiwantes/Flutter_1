@@ -36,6 +36,8 @@ class _NavMenu extends State<NavMenu> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      child: Container(
+      color: Pcolors.whiteButton,
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
@@ -138,6 +140,7 @@ class _NavMenu extends State<NavMenu> {
           divider,
         ],
       ),
+    )
     );
   }
 }

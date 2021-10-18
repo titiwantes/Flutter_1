@@ -120,7 +120,7 @@ class _RegisterPageState extends State<RegisterPage> {
       return;
     }*/
 
-    Navigator.pushNamed(context, '/');
+    Navigator.pushNamed(context, '/musicPlayerPage');
   }
 
   @override

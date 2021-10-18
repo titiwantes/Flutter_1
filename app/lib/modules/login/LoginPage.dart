@@ -41,7 +41,7 @@ class _LoginPageState extends State<LoginPage> {
   /// Called when user click on connect button.
   ///
   void _onClickConnect() {
-    Navigator.pushNamed(context, '/');
+    Navigator.pushNamed(context, '/musicPlayerPage');
   }
 
 

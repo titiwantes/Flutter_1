@@ -22,7 +22,7 @@ class Pcolors {
   static Color transparentGrey = Color.fromARGB(150, 115, 115, 115);
   static Color blue = Color.fromARGB(180, 1, 110, 238);
   static Color greyMessage = Color.fromARGB(255, 241, 240, 240);
-  static Color white = Color.fromARGB(255, 3, 3, 3); //fromARGB(255, 66,69,73);
+  static Color white = Color.fromARGB(255, 255, 255, 255); //fromARGB(255, 66,69,73);
   static Color whiteButton = Color.fromARGB(255, 54,57,62);
 }
 

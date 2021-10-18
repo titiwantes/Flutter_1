@@ -57,7 +57,7 @@ class _NavMenu extends State<NavMenu> {
                     ),
                   ),
                   Text(
-                    "Jules",
+                    "",
                     style: Theme.of(context).textTheme.headline1?.copyWith(
                       color: Pcolors.black,
                       fontSize: 38

@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 //import 'package:dio/dio.dart';
+import 'package:app/main.dart';
 import 'package:flutter/material.dart';
 //import 'package:provider/provider.dart';
 import 'package:app/config/CustomTextStyle.dart';
@@ -41,6 +42,8 @@ class _LoginPageState extends State<LoginPage> {
   /// Called when user click on connect button.
   ///
   void _onClickConnect() {
+    Pcolors.white = Color.fromARGB(255, 3, 3, 3);
+    main();
     Navigator.pushNamed(context, '/musicPlayerPage');
   }
 

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:app/config/routes.dart';
 import 'package:app/utils/routes-animation/slideLeftRoute.dart';
 import 'package:app/config/Colors.dart';
+import 'package:flutter/services.dart';
 
 class NavMenu extends StatefulWidget {
   NavMenu({
@@ -110,7 +111,7 @@ class _NavMenu extends State<NavMenu> {
             title: Text('Home', style: TextStyle(color: Pcolors.black)),
             onTap: () {
               Navigator.of(context).pop();
-              widget.navigatorKey.currentState?.push(slideLeftRoute(HomeRoute));
+              widget.navigatorKey.currentState?.push(slideLeftRoute(musicPlayerRoute));
             },
           ),
           divider,
@@ -131,10 +132,11 @@ class _NavMenu extends State<NavMenu> {
               constraints: constraintsIcons,
               //child: Image.asset(''),
             ),
-            title: Text('Déconnexion', style: TextStyle(color: Pcolors.black)),
+            title: Text('quit', style: TextStyle(color: Pcolors.black)),
             onTap: () {
-              Navigator.of(context).pop();
-              widget.navigatorKey.currentState?.push(slideLeftRoute(LogoutRoute));
+              SystemNavigator.pop();
+              //Navigator.of(context).pop();
+              //widget.navigatorKey.currentState?.push(slideLeftRoute(LogoutRoute));
             },
           ),
           divider,

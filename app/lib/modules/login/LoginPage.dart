@@ -56,16 +56,16 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               children: <Widget>[
                 HeaderStyle1(
-                  text1: "Connectez-vous !",
-                  text2: "Pas encore inscrit ? ",
-                  text3: "Cliquez ici",
+                  text1: "Sign-in !",
+                  text2: "not register yet ? ",
+                  text3: "Click there",
                   routeRedirect: RegisterRoute,
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 40),
                   child: MainInput(
                     key: Key("Input email connect"),
-                    textPlaceholder: "contact@exemple.com",
+                    textPlaceholder: "contact@example.com",
                     showIcon: false,
                     fontSizeInput: 15,
                     label: "Email",
@@ -81,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                     textPlaceholder: "********",
                     showIcon: false,
                     fontSizeInput: 15,
-                    label: "Mot de passe",
+                    label: "password",
                     inputBorder: Border.all(color: Pcolors.transparentGrey),
                     onValidate: (String text) {
                     },
@@ -92,7 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                     margin: EdgeInsets.only(top: 10),
                     alignment: Alignment.centerRight,
                     child: Text(
-                      "Mot de passe oublié ?",
+                      "forgot password ?",
                       style: CustomTextStyle.workSansLightItalic(context, Colors.black, 11),
                     ),
                   ),
@@ -100,8 +100,8 @@ class _LoginPageState extends State<LoginPage> {
                 Container(
                   margin: EdgeInsets.only(top: 30),
                   child: MainButton(
-                    key: Key("Button connect"),
-                    text: "SE CONNECTER",
+                    key: Key("connect button"),
+                    text: "CONNECT",
                     color: Pcolors.purple,
                     onTap: _onClickConnect,
                   ),

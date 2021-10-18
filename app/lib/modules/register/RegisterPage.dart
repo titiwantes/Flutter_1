@@ -150,7 +150,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   onValidate: (String text) {
                   },
                   controller: _username,
-                  error: _usernameError
+                  error: _usernameError,
               ),
             ),
             Container(

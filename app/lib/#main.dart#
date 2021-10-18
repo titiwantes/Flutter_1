@@ -10,11 +10,8 @@ import 'package:app/shared/NavMenu.dart';
 import 'modules/musicPlayer/music_player.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:app/config/Colors.dart';
-import 'modules/libprofil/profil.dart';
 
-Future main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Userpref.init();
+void main() {
   runApp(Main());
 }
 
@@ -38,13 +35,20 @@ class Main extends StatelessWidget {
         // Define the default TextTheme. Use this to specify the default
         // text styling for headlines, titles, bodies of text, and more.
         textTheme: TextTheme(
-          headline1: GoogleFonts.baloo(fontSize: 28, color: Colors.black),
-          headline6: GoogleFonts.quicksand(
+          headline1: GoogleFonts.baloo(
+              fontSize: 28,
+              color: Colors.black
+          ),
+          headline6:  GoogleFonts.quicksand(
               fontSize: 20,
               color: Color.fromARGB(255, 53, 28, 117),
-              fontWeight: FontWeight.bold),
+              fontWeight: FontWeight.bold
+          ),
           bodyText1: GoogleFonts.quicksand(
-              fontSize: 17, color: Colors.black, fontWeight: FontWeight.normal),
+              fontSize: 17,
+              color: Colors.black,
+              fontWeight: FontWeight.normal
+          ),
           bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
         ),
       ),
@@ -97,7 +101,7 @@ class _AppState extends State<App> {
               backgroundColor: Colors.white,
               body: Navigator(
                 key: _navigatorKey,
-                initialRoute: LoginRoute,
+                initialRoute: musicPlayerRoute,
                 onPopPage: (route, result) {
                   // if (!route.didPop(result)) {
                   //   return false;
@@ -114,8 +118,10 @@ class _AppState extends State<App> {
                     settings: settings,
                   );
                 },
-              )),
+              )
+          ),
         ),
-        onWillPop: _willPopCallback);
+        onWillPop: _willPopCallback
+    );
   }
 }

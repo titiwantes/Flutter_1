@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:app/config/Colors.dart';
 
-var blackColor = Colors.black;
 var pinkColor = Colors.pink;
 
 var flume = 'https://i.scdn.co/image/8d84f7b313ca9bafcefcf37d4e59a8265c7d3fff';
@@ -14,7 +14,7 @@ class MusicPlayer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: blackColor,
+      backgroundColor: Pcolors.white,
       body: Padding(
         padding: const EdgeInsets.symmetric(
             horizontal: 16.0), //Resize the searchbar's padding
@@ -30,7 +30,7 @@ class MusicPlayer extends StatelessWidget {
             Text(
               'Collections',
               style: TextStyle(
-                  color: Colors.white,
+                  color: Pcolors.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 38.0),
             ),
@@ -64,17 +64,24 @@ class MusicPlayer extends StatelessWidget {
             Text(
               'Recommend',
               style: TextStyle(
-                  color: Colors.white,
+                  color: Pcolors.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 38.0),
             ),
             SizedBox(
               height: 16.0,
             ),
-            SongWidget('Animals', 'Martin Garrix', 'assets/images/animals.jpg',"assets/musics/animals.mp3"),
-            SongWidget('Often', 'The Weeknd', 'assets/images/often.jpg', "assets/musics/Often.mp3"),
-            SongWidget('Smooth Criminal', 'Mickael Jackson', 'assets/images/mickael_jackson.jpg',"assets/musics/Smooth_criminal.mp3"),
-            SongWidget('Squid Game', 'Samuel Kim Music', 'assets/images/squid_game.jpg',"assets/musics/Squid_game.mp3"),
+            SongWidget('Animals', 'Martin Garrix', 'assets/images/animals.jpg',
+                "assets/musics/animals.mp3"),
+            SongWidget('Often', 'The Weeknd', 'assets/images/often.jpg',
+                "assets/musics/Often.mp3"),
+            SongWidget(
+                'Smooth Criminal',
+                'Mickael Jackson',
+                'assets/images/mickael_jackson.jpg',
+                "assets/musics/Smooth_criminal.mp3"),
+            SongWidget('Squid Game', 'Samuel Kim Music',
+                'assets/images/squid_game.jpg', "assets/musics/Squid_game.mp3"),
           ],
         ),
       ),
@@ -124,7 +131,7 @@ class _SongWidgetState extends State<SongWidget> {
                 child: ClipRRect(
                   //Round the edges of a rectangle
                   borderRadius: BorderRadius.circular(8.0),
-                  child: Image.network(
+                  child: Image.asset(
                     widget.image,
                     fit: BoxFit.cover,
                   ),
@@ -135,7 +142,7 @@ class _SongWidgetState extends State<SongWidget> {
                 width: 80.0,
                 child: IconButton(
                   iconSize: 32.0,
-                  color: Colors.white.withOpacity(0.8),
+                  color: Pcolors.black.withOpacity(0.8),
                   icon: playButton,
                   onPressed: () async {
                     if (!isPlaying) {
@@ -166,7 +173,7 @@ class _SongWidgetState extends State<SongWidget> {
               Text(
                 widget.title,
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Pcolors.black,
                     fontWeight: FontWeight.bold,
                     fontSize: 24.0),
               ),
@@ -176,14 +183,14 @@ class _SongWidgetState extends State<SongWidget> {
               Text(
                 widget.artist,
                 style: TextStyle(
-                    color: Colors.white.withOpacity(0.5), fontSize: 18.0),
+                    color: Pcolors.white.withOpacity(0.5), fontSize: 18.0),
               ),
             ],
           ),
           Spacer(),
           Icon(
             Icons.more_horiz,
-            color: Colors.white.withOpacity(0.6),
+            color: Pcolors.white.withOpacity(0.6),
             size: 32.0,
           ),
         ],
@@ -221,7 +228,7 @@ class CollectionWidget extends StatelessWidget {
                   right: 1.0,
                   left: 1.0,
                   child: Icon(Icons.bookmark,
-                      color: Colors.white.withOpacity(0.6), size: 24.0),
+                      color: Pcolors.black.withOpacity(0.6), size: 24.0),
                 ),
               ],
             ),
@@ -232,7 +239,7 @@ class CollectionWidget extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 4.0),
             child: Text(title,
-                style: TextStyle(color: Colors.white, fontSize: 20.0)),
+                style: TextStyle(color: Pcolors.black, fontSize: 20.0)),
           ),
         ],
       ),
@@ -256,7 +263,7 @@ class SearchBar extends StatelessWidget {
           ),
           Icon(
             Icons.search,
-            color: Colors.white,
+            color: Pcolors.black,
           ),
           SizedBox(
             width: 8.0,

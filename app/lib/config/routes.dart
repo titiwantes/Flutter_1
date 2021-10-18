@@ -11,6 +11,8 @@ import 'package:app/modules/Settings/Settings.dart';
 import 'package:app/modules/musicPlayer/music_player.dart';
 import 'package:app/modules/Settings/appearance/AppearanceSettingsPage.dart';
 import 'package:app/modules/libprofil/profil.dart';
+import 'package:app/modules/login/LoginPage.dart';
+import 'package:app/modules/register/RegisterPage.dart';
 
 class RouteModel {
   RouteModel({required this.path, required this.buildRoute});
@@ -29,6 +31,8 @@ const String testPage1 = '/testPage1';
 const String testPage2 = '/testPage2';
 const String musicPlayerRoute = '/musicPlayerPage';
 const String appearanceSettingsRoute = '/settings/appearance';
+const String LoginRoute = '/login';
+const String RegisterRoute = '/register';
 
 var routes = [
   //RouteModel(path: homeRoute, buildRoute: ([Arguments? args]) => HomePage()),
@@ -36,17 +40,14 @@ var routes = [
   RouteModel(path: testPage2, buildRoute: ([Arguments? args]) => TestPage2()),
   RouteModel(path: FavorisRoute, buildRoute: ([Arguments? args]) => Favoris()),
   RouteModel(path: LogoutRoute, buildRoute: ([Arguments? args]) => Logout()),
-  RouteModel(
-      path: ProfileRoute, buildRoute: ([Arguments? args]) => ProfilInfo()),
-  RouteModel(
-      path: SettingsRoute, buildRoute: ([Arguments? args]) => Settings()),
+  RouteModel(path: ProfileRoute, buildRoute: ([Arguments? args]) => ProfilInfo()),
+  RouteModel(path: SettingsRoute, buildRoute: ([Arguments? args]) => Settings()),
   RouteModel(path: HelpRoute, buildRoute: ([Arguments? args]) => Help()),
   RouteModel(path: HomeRoute, buildRoute: ([Arguments? args]) => Home()),
-  RouteModel(
-      path: musicPlayerRoute, buildRoute: ([Arguments? args]) => MusicPlayer()),
-  RouteModel(
-      path: appearanceSettingsRoute,
-      buildRoute: ([Arguments? args]) => AppearanceSettingsPage())
+  RouteModel(path: musicPlayerRoute, buildRoute: ([Arguments? args]) => MusicPlayer()),
+  RouteModel(path: appearanceSettingsRoute, buildRoute: ([Arguments? args]) => AppearanceSettingsPage()),
+  RouteModel(path: LoginRoute, buildRoute: ([Arguments? args]) => LoginPage()),
+  RouteModel(path: RegisterRoute, buildRoute: ([Arguments? args]) => RegisterPage())
 ];
 
 getRoute(String? routeName, [Arguments? args]) {

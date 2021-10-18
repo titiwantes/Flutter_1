@@ -27,12 +27,6 @@ class _HeaderStyle1State extends State<HeaderStyle1> {
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        Container(
-          child: Image(
-            image: AssetImage('assets/images/logo/logo_black.png'),
-            width: 60,
-          ),
-        ),
         Expanded(
           child: Container(
             padding: EdgeInsets.only(left: 15),

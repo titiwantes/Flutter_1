@@ -97,7 +97,7 @@ class _AppState extends State<App> {
               backgroundColor: Colors.white,
               body: Navigator(
                 key: _navigatorKey,
-                initialRoute: musicPlayerRoute,
+                initialRoute: LoginRoute,
                 onPopPage: (route, result) {
                   // if (!route.didPop(result)) {
                   //   return false;

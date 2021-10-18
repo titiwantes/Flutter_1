@@ -15,7 +15,10 @@ class MainInput extends StatefulWidget {
     this.showIcon = true,
     this.inputBorder,
     this.fontSizeInput = 17,
-    this.label = ""
+    this.label = "",
+    this.controller,
+    this.error = false,
+    this.hide = false
   }) : super(key: key);
 
   Function(String) onValidate;
@@ -25,6 +28,9 @@ class MainInput extends StatefulWidget {
   Border? inputBorder;
   double fontSizeInput;
   String label;
+  TextEditingController? controller;
+  bool error;
+  bool hide;
 
   @override
   _MainInput createState() => _MainInput();
@@ -150,10 +156,6 @@ class _MainInput extends State<MainInput> {
                       repeat: true,
                       child: Container(
                           padding: EdgeInsets.only(left: 10, right: 10),
-                          child: Image(
-                            image: AssetImage('assets/images/icons/mic.png'),
-                            width: 18,
-                          )
                       ),
                     ),
                   ),

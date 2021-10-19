@@ -7,6 +7,7 @@ import './user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:async';
 import 'dart:io';
+import 'package:app/config/Colors.dart';
 
 class ProfilPage extends StatelessWidget {
   const ProfilPage({Key? key}) : super(key: key);
@@ -30,6 +31,7 @@ class ProfilInfoState extends State<ProfilInfo> {
   User user = Userpref.getUser();
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Pcolors.white,
         body: ListView(
       physics: BouncingScrollPhysics(),
       children: [
@@ -91,13 +93,13 @@ Widget MusicWidget(
                           name,
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 16),
+                              fontWeight: FontWeight.bold, fontSize: 16, color: Pcolors.black),
                         ),
                         Text(
                           value,
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 12),
+                              fontWeight: FontWeight.bold, fontSize: 12, color: Pcolors.black),
                         )
                       ],
                     ),
@@ -127,11 +129,11 @@ Widget NumberButton(BuildContext context, String value, String type) =>
         children: <Widget>[
           Text(
             value,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: Pcolors.black),
           ),
           SizedBox(height: 2),
           Text(type,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15))
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Pcolors.black))
         ],
       ),
     );
@@ -153,8 +155,8 @@ class ButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ElevatedButton(
         style: ElevatedButton.styleFrom(
-            primary: Colors.black,
-            onPrimary: Colors.white,
+            primary: Pcolors.black,
+            onPrimary: Pcolors.white,
             shape: StadiumBorder(),
             padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10)),
         child: Text(text),
@@ -213,12 +215,12 @@ class ProfileWidget extends StatelessWidget {
   }
 
   Widget editIcon(Color color) => IconCircle(
-      color: Colors.white,
+      color: Pcolors.white,
       all: 3,
       child: IconCircle(
           color: color,
           all: 8,
-          child: Icon(Icons.edit, color: Colors.white, size: 25)));
+          child: Icon(Icons.edit, color: Pcolors.white, size: 25)));
 
   Widget IconCircle(
           {required Widget child, required double all, required Color color}) =>
